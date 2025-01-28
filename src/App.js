@@ -1,25 +1,72 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import {
+  Header,
+  HeroSection,
+  ServicesSection,
+  ServiceCard,
+  Footer,
+  ContactForm,
+} from "./styles/StyledComponents";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {/* Cabeçalho */}
+      <Header>
+        <h1>RR Software</h1>
+        <nav>
+          <ul>
+            <li><a href="#services">Serviços</a></li>
+            <li><a href="#about">Sobre Nós</a></li>
+            <li><a href="#contact">Contato</a></li>
+          </ul>
+        </nav>
+      </Header>
+
+      {/* Hero Section */}
+      <HeroSection>
+        <h2>Soluções Inovadoras para o Sucesso do Seu Negócio</h2>
+        <p>Desenvolvemos softwares sob medida para transformar suas ideias em realidade.</p>
+        <a href="#contact">Fale Conosco</a>
+      </HeroSection>
+
+      {/* Seção de Serviços */}
+      <ServicesSection id="services">
+        <h3>Nossos Serviços</h3>
+        <div style={{ display: "flex", justifyContent: "center", gap: "20px" }}>
+          <ServiceCard>
+            <h4>Desenvolvimento Web</h4>
+            <p>Criação de sites e sistemas personalizados para a sua empresa.</p>
+          </ServiceCard>
+          <ServiceCard>
+            <h4>Aplicativos Mobile</h4>
+            <p>Apps intuitivos e responsivos para Android e iOS.</p>
+          </ServiceCard>
+          <ServiceCard>
+            <h4>Consultoria Técnica</h4>
+            <p>Soluções estratégicas para otimizar seus processos tecnológicos.</p>
+          </ServiceCard>
+        </div>
+      </ServicesSection>
+
+      {/* Formulário de Contato */}
+      <section id="contact" style={{ padding: "60px 20px", textAlign: "center" }}>
+        <h3>Entre em Contato</h3>
+        <p>Quer saber mais? Envie uma mensagem para nossa equipe!</p>
+        <ContactForm>
+          <input type="text" placeholder="Seu Nome" />
+          <input type="email" placeholder="Seu E-mail" />
+          <textarea placeholder="Sua Mensagem" rows="4"></textarea>
+          <button type="submit">Enviar</button>
+        </ContactForm>
+      </section>
+
+      {/* Rodapé */}
+      <Footer>
+        <p>&copy; 2025 RR Software. Todos os direitos reservados.</p>
+      </Footer>
     </div>
   );
-}
+};
 
 export default App;
